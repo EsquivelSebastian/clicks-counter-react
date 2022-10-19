@@ -1,24 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import freeCodeCampLogo from "../src/images/logo.png";
+import Button from './components/button';
 
 function App() {
+
+  const controlClick = () =>{
+    console.log("click")
+  }
+
+  const resetCounter= () =>{
+    console.log("Reiniciar")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="logo-container">
+    <img 
+    className="logo"
+    src={freeCodeCampLogo}
+    alt="logo de freecodecamp"
+     />
+     </div>
+     <div className='main-container' >
+      <Button 
+      text="Click"
+      bttnClick={true}
+      controlClick={controlClick}
+      />
+
+      <Button
+            text="Reset"
+            bttnClick={false}
+            controlClick={resetCounter} />
+
+     </div>
+    </div>  
+   
   );
 }
 
